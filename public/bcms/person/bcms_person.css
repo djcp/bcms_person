@@ -3,7 +3,11 @@
 }
 
 .person{
-  margin-bottom: 1em;
+  margin-bottom: 2em;
+}
+
+.person h2{
+  margin-bottom: 5px;
 }
 
 .person-photo{

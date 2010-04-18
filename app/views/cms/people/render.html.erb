@@ -13,14 +13,13 @@
   </div>
 
   <div class="person-content">
-    <h2><%= h @content_block.display_name %></h2>
-    <%= (@content_block.job_title.blank?) ? '' : "<h3>#{h @content_block.job_title}</h3>" %>
+    <h2 class="person-name"><%= h @content_block.display_name %><a name="<%= @content_block.display_name.gsub(/[^a-z\d]/i,'-').downcase %>"></a></h2>
+    <%= (@content_block.job_title.blank?) ? '' : "<h3 class=\"person-job-title\">#{h @content_block.job_title}</h3>" %>
     <div class="summary" id="person-<%= @content_block.id %>-summary"><%= @content_block.summary %></div>
     <% if ! @content_block.description.blank? %>
       <div class="description" style="display: none;" id="person-<%= @content_block.id %>-description"><%= @content_block.description %></div>
       <div class="person-details-toggle"><a href="#" id="person-<%= @content_block.id %>-toggle" class="person-toggle">more &raquo;</a></div>
     <% end %>
   </div>
-
+  <div class="clear"></div>
 </div>
-<div class="clear"></div>
