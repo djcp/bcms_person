@@ -1,0 +1,15 @@
+<%= f.cms_text_field :name, :label => 'Full Name', :instructions => 'This is just to identify the person in the backend.' %>
+<%= f.cms_text_field :first_name, :instructions => 'Required' %>
+<%= f.cms_text_field :middle_name %>
+<%= f.cms_text_field :last_name, :instructions => 'Required' %>
+<%= f.cms_drop_down :person_category_id,  PersonCategory.all(:order => "name").map{|c| [c.name, c.id]}, :prompt => "- Select one -", :label => "Person Category", :instructions => 'Please select what type of person this is. You can add more categories under "Person -> Person Category" in the admin interface.'  %>
+<%= f.cms_text_field :job_title %>
+<%= f.cms_text_field :phone %>
+<%= f.cms_text_field :office %>
+<%= f.cms_text_editor :summary, :instructions => 'Used in compact listings - should probably be 2 to 3 sentences.' %>
+<%= f.cms_text_editor :description, :instructions => 'The full description of this person. If you enter content here, we\'ll create a toggle that allows visitors to switch between the summary and full description content. Requires jQuery.' %>
+<%= f.cms_file_field :attachment_file, :label => "Photo", :instructions => 'Default is a maximum of 100 pixels in width' %>
+<%= f.cms_date_picker :start_date %>
+<%= f.cms_date_picker :end_date %>
+<%= f.cms_check_box :sticky, :instructions => 'This person should always be at the top of lists.' %>
+

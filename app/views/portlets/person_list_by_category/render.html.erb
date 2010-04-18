@@ -1,0 +1,19 @@
+<% 
+  require_javascript_include(['jquery','../bcms/person/bcms_person']) 
+  require_stylesheet_link(['../bcms/person/bcms_person'])
+-%>
+<div class="person-list person-category-<%= (@person_category.blank?) ? 'all' : @person_category.name.gsub(/[^a-z\d]/i,'-').downcase %>">
+  <% if @portlet.display_name %>
+    <h2><%=h @portlet.name %></h2>
+  <% end %>
+  <% unless @portlet.description.blank? %>
+    <div class="description"><%= @portlet.description %></div>
+  <% end %>
+  <% unless @people.blank? %>
+    <% @people.each do |person| %>
+      <%= render_connectable person %>
+    <% end %>
+  <% else %>
+    <%= @portlet.none_found_message %>
+  <% end %>
+</div>

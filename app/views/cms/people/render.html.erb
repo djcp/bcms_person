@@ -1,0 +1,26 @@
+<div class="person person-<%= @content_block.id %>">
+  <div class="person-photo">
+    <% unless @content_block.attachment.blank? %>
+      <%= image_tag(@content_block.attachment_link, :alt => @content_block.display_name) %>
+    <% end %>
+  </div>
+
+  <div class="person-meta">
+    <%= (@content_block.phone.blank?) ? '' : %Q|<div class="phone"><span>Phone:</span> #{@content_block.phone}</div>| %>
+    <%= (@content_block.office.blank?) ? '' : %Q|<div class="office"><span>Office:</span> #{@content_block.office}</div>| %>
+    <%= (@content_block.start_date.blank?) ? '' : %Q|<div class="start_date"><span>From:</span> #{@content_block.start_date.month}/#{content_block.start_date.year}</div>| %>
+    <%= (@content_block.end_date.blank?) ? '' : %Q|<div class="end_date"><span>To:</span> #{@content_block.start_date.month}/#{content_block.start_date.year}</div>| %>
+  </div>
+
+  <div class="person-content">
+    <h2><%= h @content_block.display_name %></h2>
+    <%= (@content_block.job_title.blank?) ? '' : "<h3>#{h @content_block.job_title}</h3>" %>
+    <div class="summary" id="person-<%= @content_block.id %>-summary"><%= @content_block.summary %></div>
+    <% if ! @content_block.description.blank? %>
+      <div class="description" style="display: none;" id="person-<%= @content_block.id %>-description"><%= @content_block.description %></div>
+      <div class="person-details-toggle"><a href="#" id="person-<%= @content_block.id %>-toggle" class="person-toggle">more &raquo;</a></div>
+    <% end %>
+  </div>
+
+</div>
+<div class="clear"></div>

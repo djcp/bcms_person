@@ -1,0 +1,37 @@
+.clear{
+  clear: both;
+}
+
+.person{
+  margin-bottom: 1em;
+}
+
+.person-photo{
+  float: left;
+  width: 110px;
+  text-align: center;
+}
+
+.person-photo img{
+  width: 100px;
+}
+
+.person-meta{
+  float: right;
+  text-align: left;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  width: 150px;
+}
+
+.person-meta span{
+  font-weight: bold;
+}
+
+.person-content{
+  margin-left: 110px;
+}
+
+.person-toggle {
+  font-size: 10px;
+}

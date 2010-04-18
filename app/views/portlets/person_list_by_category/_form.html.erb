@@ -1,0 +1,14 @@
+<%= f.cms_text_field :name %>
+<%= f.cms_text_editor :description, :instructions => 'Appears below the title and above the list of people' %>
+<%= f.cms_drop_down :person_category_id,  PersonCategory.all(:order => "name").map{|c| [c.name, c.id.to_s]}, :prompt => "- All people -", :label => "Person Category", :instructions => 'Display people in this category.'  %>
+<%= f.cms_drop_down :sort_order, [
+  ['Last Name','sticky desc, last_name, first_name'],
+  ['Last Name reverse','sticky desc, last_name desc, first_name desc'],
+  ['First Name','sticky desc, first_name, last_name'],
+  ['First name reverse','sticky desc, first_name desc, last_name desc'],
+  ['Start date','sticky desc, start_date'],
+  ['Start date reverse','sticky desc, start_date desc']
+], :prompt => '- Choose a sort order -' %>
+<%= f.cms_template_editor :template %>
+<%= f.cms_check_box :display_name, :instructions => "Show the name of this portlet in an h2 tag" %>
+<%= f.cms_text_editor :none_found_message, :instructions => 'Text to display if no people are found.' %>
