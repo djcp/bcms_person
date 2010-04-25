@@ -19,7 +19,7 @@
     <% if ! @content_block.description.blank? %>
       <div class="description" style="display: none;" id="person-<%= @content_block.id %>-description">
         <% unless @content_block.attachment.blank? %>
-          <%= image_tag(thumbnail(@content_block,'250'), :alt => @content_block.display_name, :class=>'full-photo') %>
+          <%= image_tag(thumbnail(@content_block,'200'), :alt => @content_block.display_name, :class=>'full-photo') %>
         <% end %>
         <%= @content_block.description %>
       </div>
