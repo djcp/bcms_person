@@ -16,4 +16,7 @@ SPEC = Gem::Specification.new do |spec|
   spec.files += Dir["public/bcms/person/**/*"]
   spec.has_rdoc = true
   spec.extra_rdoc_files = ["README"]
+  if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+    spec.add_dependency("bcms_thumbnail", [">= 1.0.2"])
+  end
 end

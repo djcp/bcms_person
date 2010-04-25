@@ -1,5 +1,9 @@
 == BrowserCMS Person extension
 
-This BrowserCMS 3.1 (or greater) extension allows you to create and group lists of people together in an attractive format.  It's not really ready yet.
+This BrowserCMS 3.1 (or greater) extension allows you to create and group lists of people together in an attractive format.
+
+== Requirements
+
+* bcms_thumbnail - which should be installed and activated before you attempt to use this extension. bcms_thumbnail requires the ImageMagick command-line utilities (identify and mogrify for example).
 
 

@@ -8,7 +8,7 @@
 <%= f.cms_text_field :office %>
 <%= f.cms_text_editor :summary, :instructions => 'Used in compact listings - should probably be 2 to 3 sentences.' %>
 <%= f.cms_text_editor :description, :instructions => 'The full description of this person. If you enter content here, we\'ll create a toggle that allows visitors to switch between the summary and full description content. Requires jQuery.' %>
-<%= f.cms_file_field :attachment_file, :label => "Photo", :instructions => 'Default is a maximum of 100 pixels in width' %>
+<%= f.cms_file_field :attachment_file, :label => "Photo", :instructions => 'Upload a cropped jpg, png, or gif of any reasonable size - we\'ll scale it automatically.' %>
 <%= f.cms_date_picker :start_date %>
 <%= f.cms_date_picker :end_date %>
 <%= f.cms_check_box :sticky, :instructions => 'This person should always be at the top of lists.' %>
