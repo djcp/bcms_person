@@ -2,11 +2,15 @@ class CreatePersonCategories < ActiveRecord::Migration
   def self.up
     create_content_table :person_categories do |t|
       t.string :name 
-      t.string :description 
+      t.string :description
+      t.integer :position
     end
     ContentType.create!(:name => "PersonCategory", :group_name => "Person")
     ['Staff','Board Member','Alumni'].each do |cat|
       PersonCategory.create(:publish_on_save => true, :name => cat)
+    end
+    [:position].each do|col|
+      add_index :person_categories, col
     end
   end
 

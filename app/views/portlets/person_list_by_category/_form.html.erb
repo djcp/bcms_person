@@ -8,7 +8,7 @@
   ['First name reverse','sticky desc, first_name desc, last_name desc'],
   ['Start date','sticky desc, start_date'],
   ['Start date reverse','sticky desc, start_date desc']
-], :prompt => '- Choose a sort order -' %>
+], :prompt => '- Choose a sort order -', :instructions => 'The sort order of people in this category.' %>
 <%= f.cms_template_editor :template %>
 <%= f.cms_check_box :display_name, :instructions => "Show the name of this portlet in an h2 tag" %>
 <%= f.cms_text_editor :none_found_message, :instructions => 'Text to display if no people are found.' %>
