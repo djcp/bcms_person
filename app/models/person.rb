@@ -1,9 +1,14 @@
 class Person < ActiveRecord::Base
-  acts_as_content_block
+
+  EMAIL_REGEX = /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i
+
+  acts_as_content_block :taggable => true
   belongs_to_attachment
   belongs_to :person_category
 
-  validates_presence_of :first_name, :last_name
+  validates_format_of :email, :with => EMAIL_REGEX, :allow_blank => true
+
+  validates_presence_of :first_name, :last_name, :name
 
   def set_attachment_file_path
     # The default behavior is use /attachments/file.txt for the attachment path,

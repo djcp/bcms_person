@@ -1,7 +1,7 @@
 SPEC = Gem::Specification.new do |spec| 
   spec.name = "bcms_person"
   spec.rubyforge_project = spec.name
-  spec.version = "0.5.0"
+  spec.version = "0.5.1"
   spec.summary = "A staffer / board member / general person module for BrowserCMS"
   spec.author = "Dan Collis-Puro" 
   spec.email = "dan@collispuro.com" 

@@ -6,7 +6,8 @@ class CreatePeople < ActiveRecord::Migration
       t.string :last_name 
       t.string :job_title 
       t.string :phone 
-      t.string :office 
+      t.string :office
+      t.string :email
       t.text :summary, :size => (64.kilobytes + 1) 
       t.text :description, :size => (64.kilobytes + 1) 
       t.belongs_to :attachment
@@ -15,6 +16,7 @@ class CreatePeople < ActiveRecord::Migration
       t.date :end_date 
       t.string :type_of_person
       t.boolean :sticky
+      t.string :owned_tag
       t.references :person_category
     end
 
